@@ -38,3 +38,52 @@ fn guess_number() {
         }
     }
 }
+
+fn data_types() {
+    let b: u8 = 255;
+    println!("byte number is {}", b);
+    //println!("byte number wrapping b + 1 = {}", b + 1);
+
+    let f1: f32 = 0.2;
+    let f2: f32 = 0.1;
+    println!("0.2 + 0.1 = {}", f1 + f2);
+    println!("0.2 + 0.1 == 0.3 is {}", (f1 + f2) == 0.3);
+
+    // char type
+    println!("{}", 'A');
+
+    // tuple type
+    let t: (i32, f64, u8) = (500, 6.4, 1);
+    println!("{:?}", t);
+
+    let (_x, y, _z) = t;
+    println!("The value of y is: {}", y);
+    println!("first tuple value is {}", t.0);
+
+    // array type
+    let a = [1, 2, 3, 4, 5];
+
+    // Array is not allowed to grow or shrink in size.
+    // Arrays are useful when you want your data allocated
+    // on the stack rather than the heap.
+    let months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+    ];
+
+    // array with 5 elements of i32 type
+    let a: [i32; 5] = [1, 2, 3, 4, 5];
+
+    // a = [3, 3, 3, 3, 3]
+    let a = [3; 5];
+}
