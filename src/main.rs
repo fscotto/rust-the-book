@@ -61,12 +61,12 @@ fn data_types() {
     println!("first tuple value is {}", t.0);
 
     // array type
-    let a = [1, 2, 3, 4, 5];
+    let _a = [1, 2, 3, 4, 5];
 
     // Array is not allowed to grow or shrink in size.
     // Arrays are useful when you want your data allocated
     // on the stack rather than the heap.
-    let months = [
+    let _months = [
         "January",
         "February",
         "March",
@@ -82,8 +82,37 @@ fn data_types() {
     ];
 
     // array with 5 elements of i32 type
-    let a: [i32; 5] = [1, 2, 3, 4, 5];
+    let _a: [i32; 5] = [1, 2, 3, 4, 5];
 
     // a = [3, 3, 3, 3, 3]
-    let a = [3; 5];
+    let _a = [3; 5];
+}
+
+fn functions() {
+    another_function(5, 6);
+
+    let _x = 5;
+    let _y = {
+        let x = 3;
+        x + 1
+    };
+
+    let x = five();
+    println!("The value of x is: {}", x);
+    println!("The value of x + 1 is: {}", plus_one(x));
+    println!("The value of x is: {}", x);
+}
+
+fn another_function(x: i32, y: i32) {
+    println!("The value of x is {}", x);
+    println!("The value of y is {}", y);
+}
+
+// implicit return
+fn five() -> i32 {
+    5
+}
+
+fn plus_one(x: i32) -> i32 {
+    x + 1 // or return x + 1;
 }
