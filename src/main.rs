@@ -6,6 +6,9 @@ const MAX_POINT: u32 = 100_000;
 
 fn main() {
     // guess_number()
+    println!("0°F = {}°C", fahrenheit_to_celsius(0.0));
+    println!("0°C = {}°F", celsius_to_fahrenheit(0.0));
+    println!("9th Fibonacci Number = {}", fibonacci_nth_number(9));
 }
 
 fn guess_number() {
@@ -187,4 +190,29 @@ fn control_flow() {
         println!("{}!", number);
     }
     println!("LIFTOFF!!!");
+}
+
+fn fahrenheit_to_celsius(t: f64) -> f64 {
+    (t - 32.0) * (5.0 / 9.0)
+}
+
+fn celsius_to_fahrenheit(t: f64) -> f64 {
+    t * (9.0 / 5.0) + 32.0
+}
+
+fn fibonacci_nth_number(n: usize) -> f64 {
+    let ratio = 1.6180339887;
+    let first_numbers = [0.0, 1.0, 1.0, 2.0, 3.0, 5.0];
+
+    if n < 6 {
+        return first_numbers[n];
+    }
+
+    let mut t = 5.0;
+    let mut f = 5.0;
+    while t < (n as f64) {
+        f = (f * ratio as f64).round();
+        t += 1.0;
+    }
+    return f;
 }
